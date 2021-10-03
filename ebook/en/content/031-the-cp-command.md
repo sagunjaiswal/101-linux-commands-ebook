@@ -44,15 +44,18 @@ The SOURCE can contain one or more files or directories as arguments, and the DE
 
 #### Some useful options
 
-1. -i (interactive)
-   i stands for Interactive copying. With this option system first warns the user before overwriting the destination file. cp prompts for a response, if you press y then it overwrites the file and with any other option leave it uncopied.
+1. `-i` (interactive)
+   `i` stands for Interactive copying. With this option system first warns the user before overwriting the destination file. cp prompts for a response, if you press y then it overwrites the file and with any other option leave it uncopied.
 
+```
 $ cp -i file1.txt fileName2.txt
 cp: overwrite 'file2.txt'? y
+```
 
-2. -b(backup)
+2. `-b`(backup)
    -b(backup): With this option cp command creates the backup of the destination file in the same folder with the different name and in different format.
 
+```
 $ ls
 a.txt b.txt
 
@@ -60,18 +63,24 @@ $ cp -b a.txt b.txt
 
 $ ls
 a.txt b.txt b.txt~
+```
 
-3. -f(force)
+3. `-f`(force)
    If the system is unable to open destination file for writing operation because the user doesn’t have writing permission for this file then by using -f option with cp command, destination file is deleted first and then copying of content is done from source to destination file.
-
+```
 $ ls -l b.txt
 -r-xr-xr-x+ 1 User User 3 Nov 24 08:45 b.txt
-
+```
 User, group and others doesn't have writing permission.
 
-Without -f option, command not executed
+Without `-f` option, command not executed
+
+```
 $ cp a.txt b.txt
 cp: cannot create regular file 'b.txt': Permission denied
+```
 
 With -f option, command executed successfully
+```
 $ cp -f a.txt b.txt
+```
